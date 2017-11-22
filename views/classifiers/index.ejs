@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clasificadores</title>
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-theme.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+      <nav class="navbar navbar-inverse">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">TalentoLearning</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li ><a href="/">Inicio</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Clasificadores <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/classifiers">Todos los clasificadores</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Clasificadores</li>
+                    <li><a href="/classifiers/1">Gaussian Navie Bayes</a></li>
+                    <li><a href="/classifiers/2">Random Forest con 3 variables</a></li>
+                    <li><a href="/classifiers/3">Random Forest con 3 variables y 1 oculta</a></li>
+                    <li><a href="/classifiers/4">Random Forest con 4 variables</a></li>
+                    <li><a href="/classifiers/5">Random Forest con 5 variables</a></li>
+                    <li><a href="/classifiers/6">Random Forest con 5 variables y 1 oculta</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+
+    <div class="general">
+      <h1>Clasificadores</h1>
+      <table>
+          <% for (var i in classifiers) { %>
+          <% var classifier = classifiers[i]; %>
+          <% if ((i == 0) || (i == 3)) { %>
+            <tr>
+          <% } %>
+              <td>
+                  <div class="col-sm-4"></div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <a class="panel-title" href="/classifiers/<%= classifier.id %>"><%= classifier.name%></a>
+                      </div>
+                      <div class="panel-body">
+                        <%= classifier.description%>
+                      </div>
+                    </div>
+                  </div>
+              </td>
+            <% if ((i == 2) || (i == 5)) { %>
+              </tr>
+            <% } %>
+          <% } %>
+      </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/javascripts/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/javascripts/bootstrap.js"></script>
+    <script src="/javascripts/docs.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,28 @@
+a {
+  color: #00B7FF;
+}
+body {
+  padding-top: 0px;
+  padding-bottom: 30px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+.general {
+  padding-left: 30px;
+  padding-right: 50px;
+}
+
