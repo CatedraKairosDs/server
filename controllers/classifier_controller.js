@@ -4,10 +4,10 @@ var PythonShell = require('python-shell');
 //GET /classifiers
 exports.index = function (req, res, next) {
 
-        var classifiers = models.Classifier.findAll();
+    var classifiers = models.Classifier.findAll();
         
-        res.render('classifiers/index.ejs', {classifiers: classifiers});
-    };
+    res.render('classifiers/index.ejs', {classifiers: classifiers});
+};
 
 //GET /classifiers/:classifierId
 exports.show = function (req, res, next) {
